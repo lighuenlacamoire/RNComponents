@@ -1,22 +1,22 @@
-import React from 'react'
+import React from 'react';
 import {
   StyleSheet,
   View,
   Text,
   TouchableOpacity,
   StyleProp,
-  ViewStyle
-} from 'react-native'
-import platform from '../theme/platform'
+  ViewStyle,
+} from 'react-native';
+import platform from '../theme/platform';
 
 type Props = {
-  content: JSX.Element | string
-  inverse: boolean
-  disabled: boolean
-  onPress: <T>(a: T) => T | Promise<T> | void | Promise<void>
-  color: string
-  style: StyleProp<ViewStyle> | null
-}
+  content: JSX.Element | string;
+  inverse: boolean;
+  disabled: boolean;
+  onPress: <T>(a: T) => T | Promise<T> | void | Promise<void>;
+  color: string;
+  style: StyleProp<ViewStyle> | null;
+};
 
 /**
  * Componente de Boton Rectangular
@@ -28,26 +28,22 @@ type Props = {
  * @param {StyleProp<ViewStyle> | null} style Estilo para el boton
  */
 const Button = (props: Partial<Props>): JSX.Element => {
-  const { content, inverse, disabled, onPress, color, style } = props
+  const { content, inverse, disabled, onPress, style } = props;
 
-  let buttonStyle = styles.buttonDefault
-  let textStyle = styles.textDefault
+  let buttonStyle = styles.buttonDefault;
+  let textStyle = styles.textDefault;
 
   if (inverse) {
-    buttonStyle = { ...buttonStyle, ...styles.buttonSecondary }
-    textStyle = { ...textStyle, ...styles.textSecondary }
+    buttonStyle = { ...buttonStyle, ...styles.buttonSecondary };
+    textStyle = { ...textStyle, ...styles.textSecondary };
   } else {
-    buttonStyle = {
-      ...buttonStyle,
-      ...styles.buttonPrimary,
-      ...{ backgroundColor: color }
-    }
-    textStyle = { ...textStyle, ...styles.textPrimary }
+    buttonStyle = { ...buttonStyle, ...styles.buttonPrimary };
+    textStyle = { ...textStyle, ...styles.textPrimary };
   }
 
   if (disabled) {
-    buttonStyle = { ...buttonStyle, ...styles.buttonDisabled }
-    textStyle = { ...textStyle, ...styles.textDisabled }
+    buttonStyle = { ...buttonStyle, ...styles.buttonDisabled };
+    textStyle = { ...textStyle, ...styles.textDisabled };
   }
 
   return (
@@ -56,15 +52,14 @@ const Button = (props: Partial<Props>): JSX.Element => {
         activeOpacity={inverse ? 0.5 : 0.6}
         disabled={disabled}
         style={[buttonStyle, style]}
-        onPress={onPress}
-      >
+        onPress={onPress}>
         <Text style={[textStyle]}>{content}</Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
 
 /**
  * Estilos del Boton
