@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "A string validation library for node",
   "scripts": {
+    "test": "jest",
     "build": "cd ./node_modules/typescript/bin && tsc"
   },
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
+  "source": "src/index.js",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
