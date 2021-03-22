@@ -1,7 +1,5 @@
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var React = _interopDefault(require('react'));
-var reactNative = require('react-native');
+import React from 'react';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -60,20 +58,20 @@ var Button = function Button(props) {
     textStyle = _extends({}, textStyle, styles.textDisabled);
   }
 
-  return React.createElement(reactNative.View, {
+  return React.createElement(View, {
     style: {
       flex: 1
     }
-  }, React.createElement(reactNative.TouchableOpacity, {
+  }, React.createElement(TouchableOpacity, {
     activeOpacity: inverse ? 0.5 : 0.6,
     disabled: disabled,
     style: [buttonStyle, style],
     onPress: onPress
-  }, React.createElement(reactNative.Text, {
+  }, React.createElement(Text, {
     style: [textStyle]
   }, content)));
 };
-var styles = reactNative.StyleSheet.create({
+var styles = StyleSheet.create({
   buttonDefault: {
     borderRadius: 8
   },
@@ -104,5 +102,5 @@ var styles = reactNative.StyleSheet.create({
   }
 });
 
-exports.Button = Button;
-//# sourceMappingURL=index.js.map
+export { Button };
+//# sourceMappingURL=index.modern.js.map
