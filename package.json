@@ -22,9 +22,9 @@
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
-    "deploy-storybook": "storybook-to-ghpages",
-    "storybook": "start-storybook -p 6006"
+    "prestorybook": "rnstl",
+    "storybook": "start-storybook -p 7007",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "17.0.1",
@@ -32,10 +32,15 @@
     "react-native": "0.63.4"
   },
   "devDependencies": {
+    "@babel/core": "7.13.10",
+    "@storybook/addon-actions": "5.3",
+    "@storybook/addon-knobs": "5.3",
+    "@storybook/addon-links": "5.3",
+    "@storybook/addon-ondevice-actions": "5.3.23",
+    "@storybook/addon-ondevice-knobs": "5.3.25",
     "@storybook/cli": "6.1.21",
-    "@storybook/react": "6.1.21",
     "@storybook/react-native": "5.3.25",
-    "@storybook/storybook-deployer": "2.8.7",
+    "@storybook/react-native-server": "5.3.23",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.5.0",
     "@testing-library/user-event": "7.2.1",
@@ -47,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
     "babel-eslint": "10.0.3",
+    "babel-loader": "8.2.2",
     "cross-env": "7.0.2",
     "eslint": "7.21.0",
     "eslint-config-prettier": "8.1.0",
