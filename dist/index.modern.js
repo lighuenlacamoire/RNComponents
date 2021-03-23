@@ -38,7 +38,6 @@ var Button = function Button(props) {
       inverse = props.inverse,
       disabled = props.disabled,
       onPress = props.onPress,
-      color = props.color,
       style = props.style;
   var buttonStyle = styles.buttonDefault;
   var textStyle = styles.textDefault;
@@ -47,9 +46,7 @@ var Button = function Button(props) {
     buttonStyle = _extends({}, buttonStyle, styles.buttonSecondary);
     textStyle = _extends({}, textStyle, styles.textSecondary);
   } else {
-    buttonStyle = _extends({}, buttonStyle, styles.buttonPrimary, {
-      backgroundColor: color
-    });
+    buttonStyle = _extends({}, buttonStyle, styles.buttonPrimary);
     textStyle = _extends({}, textStyle, styles.textPrimary);
   }
 
