@@ -51,9 +51,9 @@ const Button = (props: Partial<Props>): JSX.Element => {
       <TouchableOpacity
         activeOpacity={inverse ? 0.5 : 0.6}
         disabled={disabled}
-        style={[buttonStyle, style]}
+        style={[styles.buttonDefault, styles.buttonPrimary]}
         onPress={onPress}>
-        <Text style={[textStyle]}>{content}</Text>
+        <Text style={[styles.textDefault, styles.textPrimary]}>{content}</Text>
       </TouchableOpacity>
     </View>
   );

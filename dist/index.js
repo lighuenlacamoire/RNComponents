@@ -39,8 +39,7 @@ var Button = function Button(props) {
   var content = props.content,
       inverse = props.inverse,
       disabled = props.disabled,
-      onPress = props.onPress,
-      style = props.style;
+      onPress = props.onPress;
   var buttonStyle = styles.buttonDefault;
   var textStyle = styles.textDefault;
 
@@ -57,17 +56,17 @@ var Button = function Button(props) {
     textStyle = _extends({}, textStyle, styles.textDisabled);
   }
 
-  return React.createElement(reactNative.View, {
+  return /*#__PURE__*/React.createElement(reactNative.View, {
     style: {
       flex: 1
     }
-  }, React.createElement(reactNative.TouchableOpacity, {
+  }, /*#__PURE__*/React.createElement(reactNative.TouchableOpacity, {
     activeOpacity: inverse ? 0.5 : 0.6,
     disabled: disabled,
-    style: [buttonStyle, style],
+    style: [styles.buttonDefault, styles.buttonPrimary],
     onPress: onPress
-  }, React.createElement(reactNative.Text, {
-    style: [textStyle]
+  }, /*#__PURE__*/React.createElement(reactNative.Text, {
+    style: [styles.textDefault, styles.textPrimary]
   }, content)));
 };
 var styles = reactNative.StyleSheet.create({

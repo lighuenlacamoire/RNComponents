@@ -37,8 +37,7 @@ var Button = function Button(props) {
   var content = props.content,
       inverse = props.inverse,
       disabled = props.disabled,
-      onPress = props.onPress,
-      style = props.style;
+      onPress = props.onPress;
   var buttonStyle = styles.buttonDefault;
   var textStyle = styles.textDefault;
 
@@ -55,17 +54,17 @@ var Button = function Button(props) {
     textStyle = _extends({}, textStyle, styles.textDisabled);
   }
 
-  return React.createElement(View, {
+  return /*#__PURE__*/React.createElement(View, {
     style: {
       flex: 1
     }
-  }, React.createElement(TouchableOpacity, {
+  }, /*#__PURE__*/React.createElement(TouchableOpacity, {
     activeOpacity: inverse ? 0.5 : 0.6,
     disabled: disabled,
-    style: [buttonStyle, style],
+    style: [styles.buttonDefault, styles.buttonPrimary],
     onPress: onPress
-  }, React.createElement(Text, {
-    style: [textStyle]
+  }, /*#__PURE__*/React.createElement(Text, {
+    style: [styles.textDefault, styles.textPrimary]
   }, content)));
 };
 var styles = StyleSheet.create({
